@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "b5044fac-6695-42f9-a691-a5f294393300",
+		"name": "Birra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/places/add-comment/5c54f989effd212f6d1a47c5/5c4c63e201a4e63ae7847d95",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "comment",
+							"value": " muy costoso!!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/places/add-comment/5c54f989effd212f6d1a47c5/5c4c63e201a4e63ae7847d95",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"places",
+						"add-comment",
+						"5c54f989effd212f6d1a47c5",
+						"5c4c63e201a4e63ae7847d95"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/places",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzU2Y2M0ODlmODA0MTFkZGYwYTk5MGUiLCJ1c2VybmFtZSI6ImRtb3Jlbm8iLCJwYXNzd29yZCI6IiQyYSQxMCR4elZBRzNDcUx2ZndWZXNvWHZKUWFPOTV2TFhKZU1XMkViaU55cWxxSnNjZ2lZN2UxdWhXaSIsImZpcnN0TmFtZSI6IkRhdmlkIiwibGFzdE5hbWUiOiJNb3Jlbm8iLCJhZGRyZXNzIjoiYXYgYmFyYWx0IiwiZW1haWwiOiJkZW1vcmVubzFAZ21haWwuY29tIiwiZGF0ZSI6IjIwMTktMDItMDNUMTE6MTE6MDQuNzc4WiIsImNyZWF0ZWRfYXQiOiIyMDE5LTAyLTAzVDExOjExOjA0Ljc4N1oiLCJ1cGRhdGVkX2F0IjoiMjAxOS0wMi0wM1QxMToxMTowNC43ODdaIiwiX192IjowLCJpYXQiOjE1NDkxOTIyNzQsImV4cCI6MTU0OTE5NDA3NH0.LdmYYE2vdO_fcdw4wRR7Z35Ap9pj3ngEQN3lvjuKOFU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/places",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"places"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/places",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzU2Y2M0ODlmODA0MTFkZGYwYTk5MGUiLCJ1c2VybmFtZSI6ImRtb3Jlbm8iLCJwYXNzd29yZCI6IiQyYSQxMCR4elZBRzNDcUx2ZndWZXNvWHZKUWFPOTV2TFhKZU1XMkViaU55cWxxSnNjZ2lZN2UxdWhXaSIsImZpcnN0TmFtZSI6IkRhdmlkIiwibGFzdE5hbWUiOiJNb3Jlbm8iLCJhZGRyZXNzIjoiYXYgYmFyYWx0IiwiZW1haWwiOiJkZW1vcmVubzFAZ21haWwuY29tIiwiZGF0ZSI6IjIwMTktMDItMDNUMTE6MTE6MDQuNzc4WiIsImNyZWF0ZWRfYXQiOiIyMDE5LTAyLTAzVDExOjExOjA0Ljc4N1oiLCJ1cGRhdGVkX2F0IjoiMjAxOS0wMi0wM1QxMToxMTowNC43ODdaIiwiX192IjowLCJpYXQiOjE1NDkxOTIyNzQsImV4cCI6MTU0OTE5NDA3NH0.LdmYYE2vdO_fcdw4wRR7Z35Ap9pj3ngEQN3lvjuKOFU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Barriot",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Avenida cualquiera calle no me acuerdo",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "excelente lugar, ambiente familiar",
+							"type": "text"
+						},
+						{
+							"key": "userId",
+							"value": "5c4c63e201a4e63ae7847d95",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/places",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"places"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "lolaya",
+							"type": "text"
+						},
+						{
+							"key": "firstName",
+							"value": "lerna",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "olaya",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "av fuerzas armadas",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "lerna@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzU2Y2Y2NTRkNWY5ZjIxMjVjNDFhM2MiLCJ1c2VybmFtZSI6ImRtb3Jlbm8iLCJwYXNzd29yZCI6IiQyYSQxMCRCcWJWLklkMTl4RGp3TFNrYmVMV1JlSk5JTVJWR1NpVlc5L05PdEJwY1AuYXcuUU5tNm5paSIsImZpcnN0TmFtZSI6IkRhdmlkIiwibGFzdE5hbWUiOiJNb3Jlbm8iLCJhZGRyZXNzIjoiYXYgYmFyYWx0IiwiZW1haWwiOiJkZW1vcmVubzFAZ21haWwuY29tIiwiZGF0ZSI6IjIwMTktMDItMDNUMTE6MjQ6MjEuMjgwWiIsImNyZWF0ZWRfYXQiOiIyMDE5LTAyLTAzVDExOjI0OjIxLjI4OFoiLCJ1cGRhdGVkX2F0IjoiMjAxOS0wMi0wM1QxMToyNDoyMS4yODhaIiwiX192IjowLCJpYXQiOjE1NDkxOTMwOTAsImV4cCI6MTU0OTE5NDg5MH0.B04gQnX0mxgKJK0qhhRQGbgbeXlZwccBbj6Q80P0gL8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users/signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "dmoreno",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/users/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzU2ZDE0NTA0N2I5NzIyY2U4ZDRkYjQiLCJ1c2VybmFtZSI6ImRtb3Jlbm8iLCJwYXNzd29yZCI6IiQyYSQxMCQybVNJdDAuM1ZjVy5QUGZQSWJuNzd1VFo2bW5pVUs1d2M1ZjdiN2NwcmNjWTFxRjZVU2lqUyIsImZpcnN0TmFtZSI6IkRhdmlkIiwibGFzdE5hbWUiOiJNb3Jlbm8iLCJhZGRyZXNzIjoiYXYgYmFyYWx0IiwiZW1haWwiOiJkZW1vcmVubzFAZ21haWwuY29tIiwiZGF0ZSI6IjIwMTktMDItMDNUMTE6MzI6MjEuMDg2WiIsImNyZWF0ZWRfYXQiOiIyMDE5LTAyLTAzVDExOjMyOjIxLjA5N1oiLCJ1cGRhdGVkX2F0IjoiMjAxOS0wMi0wM1QxMTozMjoyMS4wOTdaIiwiX192IjowLCJpYXQiOjE1NDkxOTM2ODIsImV4cCI6MTU0OTE5NTQ4Mn0.ocwJZABIoYYS9KTTBdduN_ZE7Fip71iwXOoY1c7uerk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
