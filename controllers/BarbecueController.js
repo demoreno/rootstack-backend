@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectID
 
 class BarbecueController {
   findAll(req, res, next) {
-    const coordinates = [req.body.latitude, req.body.longitude]
+    const coordinates = [req.query.latitude, req.query.longitude]
     BarbecueModel
       .find({
         "coordinates": {
@@ -14,19 +14,24 @@ class BarbecueController {
       })
       .populate('booking.user')
       .exec((err, barbecues) => {
-        if (err) next(err)
-        req.res.status(200).send(barbecues)
+        if (err) return next(err)
+        req.res.status(200).json({
+          data: barbecues
+        })
       })
   }
 
   create(req, res, next) {
+    const {
+      data
+    } = req.body;
     const {
       name,
       model,
       description,
       latitude,
       longitude
-    } = req.body
+    } = data
 
     const barbecueObject = new BarbecueModel({
       name,
@@ -37,7 +42,10 @@ class BarbecueController {
 
     barbecueObject.save((err, barbecue) => {
       if (err) next(err)
-      req.res.status(200).send(barbecue)
+      res.status(201).json({
+        message: 'Barbecue created new user.',
+        data: barbecue
+      })
     })
   }
 

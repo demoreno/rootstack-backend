@@ -12,15 +12,18 @@ class PlacesController {
 
   signUp(req, res, next) {
     const {
-      username,
+      data
+    } = req.body
+    const {
       firstName,
       lastName,
-      address,
+      zipCode,
       email
-    } = req.body
+    } = data
     let {
       password
-    } = req.body
+    } = data
+    const username = email;
 
     if (!username || !password) {
       req.res.status(412).send({
@@ -30,11 +33,14 @@ class PlacesController {
     } else {
       bcrypt.genSalt(10, (err, salt) => {
         if (err) {
-          return next(err)
+          return res.status(500).json({
+            message: err,
+            data: []
+          })
         }
         bcrypt.hash(password, salt, null, (err, hash) => {
           if (err) {
-            return res.status(500).json({
+            return res.status(200).json({
               message: err,
               data: []
             })
@@ -46,12 +52,12 @@ class PlacesController {
             password: password,
             firstName: firstName,
             lastName: lastName,
-            address: address,
+            zipCode: zipCode,
             email: email
           })
 
           newUser.save().then((users) => {
-            res.status(200).json({
+            res.status(201).json({
               message: 'Successful created new user.',
               data: users
             })
@@ -63,16 +69,23 @@ class PlacesController {
 
   signIn(req, res) {
     const {
+      data
+    } = req.body
+    const {
       username,
       password
-    } = req.body
+    } = data;
 
     UsersModel.findOne({
       username: username
     }).then((user) => {
-      user.comparePassword(password, user.password, (err) => {
-        if (err) next(err)
 
+      if (!user) return res.status(200).json({
+        message: 'Username or password is incorrect',
+        data: []
+      })
+
+      user.comparePassword(password, user.password, (err) => {
         const token = jwt.sign(user.toJSON(), config.secret, {
           expiresIn: '30m'
         })
@@ -82,7 +95,12 @@ class PlacesController {
           token: token
         })
       })
-    }).catch((err) => next(err))
+    }).catch((err) => {
+      res.status(500).json({
+        message: err,
+        data: []
+      })
+    })
   }
 }
 module.exports = new PlacesController()
