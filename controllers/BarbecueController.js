@@ -14,7 +14,10 @@ class BarbecueController {
       })
       .populate('booking.user')
       .exec((err, barbecues) => {
-        if (err) return next(err)
+        if (err) res.status(500).json({
+          message: err,
+          data: []
+        })
         req.res.status(200).json({
           data: barbecues
         })
@@ -30,18 +33,23 @@ class BarbecueController {
       model,
       description,
       latitude,
-      longitude
+      longitude,
+      image
     } = data
 
     const barbecueObject = new BarbecueModel({
       name,
       model,
       description,
-      coordinates: [latitude, longitude]
+      coordinates: [latitude, longitude],
+      image
     })
 
     barbecueObject.save((err, barbecue) => {
-      if (err) next(err)
+      if (err) res.status(500).json({
+        message: err,
+        data: []
+      })
       res.status(201).json({
         message: 'Barbecue created new user.',
         data: barbecue

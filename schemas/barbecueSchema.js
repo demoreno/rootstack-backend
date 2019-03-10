@@ -6,7 +6,7 @@ const BarbecueSchema = new Schema({
     type: String,
     required: true
   },
-  picture: {
+  image: {
     type: String,
   },
   model: {
@@ -14,8 +14,7 @@ const BarbecueSchema = new Schema({
     required: true
   },
   description: {
-    type: Date,
-    default: Date.now
+    type: String,
   },
   coordinates: {
     type: [Number],
